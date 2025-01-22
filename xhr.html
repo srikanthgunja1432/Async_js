@@ -1,0 +1,25 @@
+<html>
+
+<script>
+    const xhr=new XMLHttpRequest()
+xhr.open('GET','https://api.github.com/users/Srikanth-gunja/repos',true)
+xhr.onload= function(){
+    if(xhr.status>=200 && xhr.status<300){
+        
+        const repos = JSON.parse(xhr.responseText);
+            
+            const repoList = repos.map(repo => `<li>${repo.name}</li>`)
+            document.getElementById('p').innerHTML = `<ul>${repoList[3]}</ul>`;
+            console.log(repos);
+    }
+    else{
+        console.log('error');
+    }
+}
+xhr.send()
+    </script>
+    <body>
+
+<p id="p"></p>
+    </body>
+</html>
