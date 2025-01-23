@@ -9,7 +9,7 @@ xhr.onload= function(){
         const repos = JSON.parse(xhr.responseText);
             
             const repoList = repos.map(repo => `<li>${repo.name}</li>`)
-            document.getElementById('p').innerHTML = `<ul>${repoList[3]}</ul>`;
+            document.getElementById('p').innerHTML = `<ul>${repoList[0]}</ul>`;
             console.log(repos);
     }
     else{

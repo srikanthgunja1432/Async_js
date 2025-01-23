@@ -1,12 +1,17 @@
 {
   "name": "5b6",
   "version": "1.0.0",
-  "main": "test.js",
+  "main": "fetch_4.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+   "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+  
 }

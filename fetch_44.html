@@ -1,0 +1,54 @@
+
+<html lang="en">
+
+<body>
+
+    <h1>Repositories of Srikanthgunja1432</h1>
+    <table border="1" id="reposTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+   
+</body>
+<script>
+    fetch('https://api.github.com/users/srikanthgunja1432/repos')
+        .then(response => response.json())
+        .then(data => {
+            
+            const tableBody = document.querySelector('#reposTable tbody');
+            
+           
+            data.forEach(repo => {
+                const row = document.createElement('tr');
+                
+               
+                const nameCell = document.createElement('td');
+                const urlCell = document.createElement('td');
+                const descriptionCell = document.createElement('td');
+                
+                nameCell.textContent = repo.name;
+                urlCell.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.html_url}</a>`;
+                descriptionCell.textContent = repo.description || "No description available";
+                
+               
+                row.appendChild(nameCell);
+                row.appendChild(urlCell);
+                row.appendChild(descriptionCell);
+                
+              
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(() => console.log("error"));
+</script>
+
+</html>
